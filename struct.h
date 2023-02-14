@@ -4,13 +4,17 @@
 
 #ifndef Students
 #define Students
-#include <stdbool.h>
+#include "stdio.h"
+#define classSize 20
+
+
 typedef struct student{
     char * name;
     int Grade;
     int id;
     int age;
     char * password;
-    bool gender;
+    int gender;
 }Student;
+
 #endif
