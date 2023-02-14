@@ -6,8 +6,6 @@
 #define Students
 #include "stdio.h"
 #define classSize 20
-
-
 typedef struct student{
     char * name;
     int Grade;

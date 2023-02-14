@@ -4,15 +4,9 @@
 
 #ifndef UNTITLED11_ALLMETHODS_H
 #define UNTITLED11_ALLMETHODS_H
-
-
 #include "struct.h"
 #include "data.h"
-
-
 #define Adminpassword 1234
-
-
 //1 aya
 void addStudentRecord(Student *st);
 void editStudentGrade(int pass);

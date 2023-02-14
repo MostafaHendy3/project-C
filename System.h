@@ -5,5 +5,6 @@
 #include "allmethods.h"
 #include "data.h"
 void Admin();
+void User();
 void ChooseControl();
 #endif

@@ -1,5 +1,5 @@
 
 #include "System.h"
 int main(){
-    Admin();
+    ChooseControl();
 }
