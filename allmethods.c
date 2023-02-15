@@ -121,8 +121,11 @@ void viewStudentRecord(int id)
 }
 void viewAllStudentRecord()
 {
+    printf("hola");
     for (int i = 0; i < numOfStudent; ++i)
     {
         viewStudentRecord(allRecords[i]->id);
     }
 }
+
+
