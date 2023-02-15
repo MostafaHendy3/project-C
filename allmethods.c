@@ -123,7 +123,7 @@ void viewStudentRecord(int id)
 
 Student * readStudent(){
         Student * st;
-        st = (Student *)malloc(sizeof (Student));  
+        st = (Student *)malloc(sizeof (Student));
         printf("Enter Name\n");
         scanf(" %[^\n]s", st->name);
         printf("%s",st->name);
@@ -179,3 +179,5 @@ void editStudentname(){
             gets(allRecords[i]->name);
             printf("Your name has been updated");
             }
+
+
