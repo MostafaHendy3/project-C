@@ -81,6 +81,7 @@ Student *readStudent()
 {
     Student *st;
     st = (Student *)malloc(sizeof(Student));
+    
     printf("Enter Name\n");
     scanf(" %[^\n]s", st->name);
     printf("Enter ID\n");
