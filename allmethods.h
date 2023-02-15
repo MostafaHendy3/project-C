@@ -20,5 +20,6 @@ void editStudentName();
 //3 me
 void viewStudentRecord(int id);
 void viewAllStudentRecord();
+Student * readStudent();
 
 #endif //UNTITLED11_ALLMETHODS_H
