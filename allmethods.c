@@ -119,11 +119,29 @@ void viewStudentRecord(int id)
         printf("Student not Found ,Enter Valid ID\n");
     }
 }
-void viewAllStudentRecord()
-{
-    printf("hola");
-    for (int i = 0; i < numOfStudent; ++i)
-    {
+
+
+Student * readStudent(){
+        Student * st;
+        st = (Student *)malloc(sizeof (Student));  
+        printf("Enter Name\n");
+        scanf(" %[^\n]s", st->name);
+        printf("%s",st->name);
+        printf("Enter ID\n");
+        scanf("%d",&(st->id));
+        printf("Enter age\n");
+        scanf("%d",&(st->age));
+        printf("Enter Grade\n");
+        scanf("%d",&(st->Grade));
+        printf("Enter Gender\n");
+        scanf("%d",&(st->gender));
+        printf("Enter passwordn\n");
+        scanf(" %[^\n]%*c", st->name);
+        //printf("%p\n",st);
+        return st;
+}
+void viewAllStudentRecord(){
+    for (int i = 0; i <classSize ; ++i) {
         viewStudentRecord(allRecords[i]->id);
     }
 }
