@@ -128,4 +128,36 @@ void viewAllStudentRecord()
     }
 }
 
+void removeStudentRecord(int id){
+   int found =0;
+    for (int i = 0; i < classSize; ++i) {
+        if(allRecords[i]!=0|| allRecords[i]!=NULL){
+            if(id == allRecords[i]->id){
+               allRecords[i]->name = NULL;
+               allRecords[i]->id = 0;
+               allRecords[i]->age = 0;
+               allRecords[i]->Grade = 0;
+               allRecords[i]->gender = 0;
+               allRecords[i]->password = NULL;
+            printf("All data has been cleared");
+                found =1;
+            }
+        }
+    }
+    if(found==0){
+        printf("Student not Found ,Enter Valid ID");
+    }
+}
 
+void editStudentPassword(){
+            printf("Please, enter your new password: \n");
+            gets(allRecords[i]->password);
+            printf("The password has been updated");
+            }
+
+
+void editStudentname(){
+            printf("Please, enter your name: \n");
+            gets(allRecords[i]->name);
+            printf("Your name has been updated");
+            }
