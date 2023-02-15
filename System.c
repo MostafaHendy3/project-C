@@ -13,6 +13,7 @@ void Admin(){
 //    st  =NULL;
 //    viewStudentRecord(1000);
     printf("Admin");
+    
 }
 void User(){
     printf("User");

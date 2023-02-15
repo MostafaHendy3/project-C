@@ -139,6 +139,8 @@ Student * readStudent(){
         printf("Enter passwordn\n");
         scanf(" %[^\n]%*c", st->name);
         //printf("%p\n",st);
+
+        
         return st;
 }
 void viewAllStudentRecord(){
