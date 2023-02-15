@@ -178,6 +178,7 @@ void editStudentname(){
             printf("Please, enter your name: \n");
             gets(allRecords[i]->name);
             printf("Your name has been updated");
+           int x;
             }
 
 
