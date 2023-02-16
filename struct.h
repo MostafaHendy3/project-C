@@ -16,6 +16,6 @@ typedef struct student{
 }Student;
 typedef struct admin{
     char *password;
-}Admin;
+}Adminpass;
 
 #endif

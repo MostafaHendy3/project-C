@@ -1,5 +1,6 @@
 #include "System.h"
 static int tries =0;
+Adminpass* ad;
 void Admin(){
     
 //    Student * st;
@@ -14,10 +15,10 @@ void Admin(){
 //    st  =NULL;
 //    viewStudentRecord(1000);
     for (int i=0;i<3 && tries <3;i++){
-        char * pass=(char*) malloc(strlen(Adminpassword)+1);
+        char * pass=(char*) malloc(strlen(ad->password)+1);
         printf("Enter Admin Passwords\n");
         scanf(" %[^\n]s",pass);
-        if (strcmp(pass,Adminpassword)==0)
+        if (strcmp(pass,ad->password)==0)
         {
             while (1)
             {
@@ -56,6 +57,7 @@ void Admin(){
                         break;
                     case 5:
                         editAdminPassword();
+                        printf(ad->password);
                         break;
                     case 6:
                         editStudentGrade();

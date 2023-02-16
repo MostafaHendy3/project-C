@@ -1,6 +1,6 @@
 #include "stdio.h"
 #include "System.h"
-char * Adminpassword;
+Adminpass *ad;
 int main()
 {
     // Student *s; 
@@ -14,7 +14,9 @@ int main()
     //     }
     // }
     // viewAllStudentRecord();
-    Adminpassword =(char*) malloc( 10*sizeof(char));
-    strcpy(Adminpassword,"1234");
+    //Adminpassword =(char*) malloc( 10*sizeof(char));
+    //strcpy(Adminpassword,"1234");
+    ad=(Adminpass*)malloc(sizeof(Adminpass));
+    ad->password="1234";
     ChooseControl();
 }
