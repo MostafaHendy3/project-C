@@ -20,45 +20,48 @@ void Admin(){
         {
             while (1)
             {
-                printf("Welcome ,Admin \n\
-            1. Add student record\n\
-            2. Remove student record\n\
-            3. View student record\n\
-            4. View all records\n\
-            5. Edit admin password\n\
-            6. Edit student grade\n\
-            ");
-            unsigned int choice=3;
-            scanf("%d",&choice);
-            switch (choice) {
-            case 1:{
-                Student* std;
-                std = (Student *)malloc(sizeof(Student));
-                std =readStudent();
-                addStudentRecord(std);
-                break;}
-            case 2:{
-                printf("Enter ID\n");
-                int id =0;
-                scanf("%d", &id);
-                removeStudentRecord(id);
-                break;}
-            case 3:{
-                printf("Enter ID\n");
-                int id =0;
-                scanf("%d", &id);
-                viewStudentRecord(id);
-                break;}
-            case 4:
-                viewAllStudentRecord();
-                break;
-            case 5:
-                editAdminPassword();
-                break;
-            default:
-                printf("Enter Valid Choice");
+                        printf("Welcome ,Admin \n\
+                    1. Add student record\n\
+                    2. Remove student record\n\
+                    3. View student record\n\
+                    4. View all records\n\
+                    5. Edit admin password\n\
+                    6. Edit student grade\n\
+                    ");
+                    unsigned int choice=3;
+                    scanf("%d",&choice);
+                    switch (choice) {
+                    case 1:{
+                        Student* std;
+                        std = (Student *)malloc(sizeof(Student));
+                        readStudent2(std);
+                        addStudentRecord(std);
+                        viewStudentRecord(std->id);
+                    }
+                        break;
+                        
+                    case 2:{
+                        printf("Enter ID\n");
+                        int id =0;
+                        scanf("%d", &id);
+                        removeStudentRecord(id);
+                        break;}
+                    case 3:{
+                        printf("Enter ID\n");
+                        int id =0;
+                        scanf("%d", &id);
+                        viewStudentRecord(id);
+                        break;}
+                    case 4:
+                        viewAllStudentRecord();
+                        break;
+                    case 5:
+                        editAdminPassword();
+                        break;
+                    default:
+                        printf("Enter Valid Choice");
+                    }
             }
-        }
             break;
         }else{
             tries++;

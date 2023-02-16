@@ -73,11 +73,15 @@ void editAdminPassword(){
     if (strcmp(pass,Adminpassword)==0)
         {
         printf("Please enter new password :\n");
-        scanf(" %[^\n]%s", Adminpassword);
+        //scanf(" %[^\n]%s", Adminpassword);
+        //printf("Enter Name\n");
+        scanf(" %[^\n]s",Adminpassword);
+        printf("%s",Adminpassword);
         }
     else{
         printf("The password is false please try again!");
     }
+    free(pass);
 }
 Student *readStudent()
 {
@@ -98,6 +102,22 @@ Student *readStudent()
     scanf(" %[^\n]%*c", st->password);
     // printf("%p\n",st);
     return st;
+}
+void readStudent2(Student *st)
+{
+    printf("Enter Name\n");
+    scanf(" %[^\n]s", st->name);
+    printf("Enter ID\n");
+    scanf("%d", &(st->id));
+    printf("Enter age\n");
+    scanf("%d", &(st->age));
+    printf("Enter Grade\n");
+    scanf("%d", &(st->Grade));
+    printf("Enter Gender\n");
+    scanf("%d", &(st->gender));
+    printf("Enter passwordn\n");
+    scanf(" %[^\n]%*c", st->password);
+    // printf("%p\n",st);
 }
 void viewStudentRecord(int id)
 {
