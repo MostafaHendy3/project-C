@@ -14,5 +14,8 @@ typedef struct student{
     char * password;
     int gender;
 }Student;
+typedef struct admin{
+    char *password;
+}Admin;
 
 #endif

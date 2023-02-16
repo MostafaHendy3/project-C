@@ -1,6 +1,7 @@
 #include "System.h"
 static int tries =0;
 void Admin(){
+    
 //    Student * st;
 //    st = (Student *)malloc(sizeof (Student));
 //    st->name ="my_name1";
@@ -27,17 +28,15 @@ void Admin(){
                     4. View all records\n\
                     5. Edit admin password\n\
                     6. Edit student grade\n\
+                    7. Exit\
                     ");
                     unsigned int choice=3;
                     scanf("%d",&choice);
                     switch (choice) {
                     case 1:{
                         Student* std=readStudent();
-                        
                         addStudentRecord(std);
-                        
                         //viewStudentRecord(std->id);
-                    
                         break;
                         }
                     case 2:{
@@ -58,10 +57,15 @@ void Admin(){
                     case 5:
                         editAdminPassword();
                         break;
+                    case 6:
+                        editStudentGrade();
+                        break;
                     default:
                         printf("Enter Valid Choice");
                     }
-                    break;
+                    if(choice ==7){
+                        break;
+                    }
             }
             break;
         }else{

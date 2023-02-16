@@ -4,7 +4,8 @@
 #include "stdio.h"
 #include "allmethods.h"
 Student *allRecords[classSize];
-char* Adminpassword ="1234";
+char* Adminpassword;
+
 static int numOfStudent = 0;
 void addStudentRecord(Student *st)
 {
@@ -74,27 +75,40 @@ void editStudentGrade()
     }
 }
 void editAdminPassword(){
+    
+    strcpy(Adminpassword,"1234");
+
     char * pass=(char*) malloc(strlen(Adminpassword)+1);
+    char * NewPass=(char*) malloc(strlen(Adminpassword)+1);
     printf("Enter Admin Passwords\n");
     scanf(" %[^\n]s",pass);
+    //getchar();
     if (strcmp(pass,Adminpassword)==0)
         {
+            
+            //fflush(stdin);
         printf("Please enter new password :\n");
-        //scanf(" %[^\n]%s", Adminpassword);
+        scanf(" %[^\n]s", NewPass);
+        strcpy(Adminpassword,NewPass);
         //printf("Enter Name\n");
-        scanf(" %[^\n]s",Adminpassword);
-        printf("%s",Adminpassword);
+        // getchar();
+        //fgets(Adminpassword,10,stdin);
+        // int x =0;
+        // scanf("%d",&x);
+        
         }
     else{
         printf("The password is false please try again!");
     }
     free(pass);
+    free(NewPass);
 }
 Student *readStudent()
 {
     Student *st=(Student *)malloc(sizeof(Student));
     printf("Enter Name\n");
     scanf(" %[^\n]s", st->name);
+    printf("name : %s", st->name);
     printf("Enter ID\n");
     scanf("%d", &(st->id));
     printf("Enter age\n");
@@ -103,10 +117,12 @@ Student *readStudent()
     scanf("%d", &(st->Grade));
     printf("Enter Gender\n");
     scanf("%d", &(st->gender));
-    printf("Enter passwordn");
-    //scanf(" %[^\n]s", st->password);
-    gets(st->password);
-    printf("password : %s", st->password);
+    printf("Enter passwordn\n");
+    fflush(stdin);
+    scanf(" %[^\n]s", st->password);
+    // scanf("%c",(char *)stdin);
+    // fgets(st->password,20,stdin);
+    //st->password ="1111";
     // printf(", ID : %d", st->id);
     // printf(", age : %d", st->age);
     // printf(", Grade : %d", st->Grade);
