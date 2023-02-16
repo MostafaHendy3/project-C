@@ -5,6 +5,6 @@
 #include "allmethods.h"
 #include "string.h"
 void Admin();
-void User();
+void User(int id);
 void ChooseControl();
 #endif

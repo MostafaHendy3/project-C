@@ -13,7 +13,7 @@ void Admin(){
 //    st  =NULL;
 //    viewStudentRecord(1000);
     for (int i=0;i<3 && tries <3;i++){
-        char * pass=(char*) malloc(strlen(Adminpassword)+1);;
+        char * pass=(char*) malloc(strlen(Adminpassword)+1);
         printf("Enter Admin Passwords\n");
         scanf(" %[^\n]s",pass);
         if (strcmp(pass,Adminpassword)==0)
@@ -32,14 +32,14 @@ void Admin(){
                     scanf("%d",&choice);
                     switch (choice) {
                     case 1:{
-                        Student* std;
-                        std = (Student *)malloc(sizeof(Student));
-                        readStudent2(std);
-                        addStudentRecord(std);
-                        viewStudentRecord(std->id);
-                    }
-                        break;
+                        Student* std=readStudent();
                         
+                        addStudentRecord(std);
+                        
+                        //viewStudentRecord(std->id);
+                    
+                        break;
+                        }
                     case 2:{
                         printf("Enter ID\n");
                         int id =0;
@@ -61,6 +61,7 @@ void Admin(){
                     default:
                         printf("Enter Valid Choice");
                     }
+                    break;
             }
             break;
         }else{
@@ -75,21 +76,47 @@ void Admin(){
     return;
     
 }
-void User(){
-    printf("User");
+void User(int id){
+    int useraction=4;
+    printf("Welcome in user mode.\n");
+    rechoose:
+    printf("Please, Choose the number for a certain action.\n"
+           "1- View your record \n2- Edit your password \n3- Edit your name /n0- Exit");
+    scanf("%d", &useraction);
+    int i =findPosition(id);
+    switch(useraction){
+     case 0:
+         //exit();              // break
+     case 1:
+         viewStudentRecord(id);
+         break;
+     case 2:
+        
+         editStudentPassword(i);
+         break;
+     case 3:
+         editStudentName(i);
+         break;
+     default:{
+        printf("Invalid mode number. \nPlease, Enter a valid number");
+        goto rechoose;
+     }
+    }
 }
 void ChooseControl(){
     printf("WelCome To Student Record System:  \t\n");
+    unsigned int choice=3;
     while (1){
         printf("\n 0 -Admin \n 1-User \n 2-Exit\n");
-        unsigned int choice=3;
-        scanf("%d",&choice);
+        
+        scanf("%u",&choice);
         switch (choice) {
             case 0:
                 Admin();
                 break;
             case 1:
-                User();
+                printf("111");
+                checkmethod();
                 break;
             case 2:
                 break;
@@ -99,5 +126,38 @@ void ChooseControl(){
         if(choice==2){
             break;
         }
+    }
+}
+void checkmethod(){
+ int id;
+ char *pass;
+ printf("Please enter your ID: \t\n");
+ scanf("%d", &id);
+    for (int i = 0; i < classSize; ++i) {
+        if(allRecords[i]!=0|| allRecords[i]!=NULL){
+            if(id == allRecords[i]->id){
+              int count =0;
+              re_pass:
+              printf("Please enter your password: \t\n");
+              scanf(" %[^\n]%*c",pass);
+              if(strcmp(pass,allRecords[i]->password)){
+              User(id);
+            }
+            else {
+                printf("Invalid password");
+                count++;
+                if(count<4){
+                goto re_pass;
+                }
+                else {
+                    break;       //break
+                }
+                }
+            }
+            else {
+                printf("Invalid ID");
+                checkmethod();
+                 }
+            }
     }
 }

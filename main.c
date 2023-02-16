@@ -14,22 +14,5 @@ int main()
     //     }
     // }
     // viewAllStudentRecord();
-    while (1){
-        unsigned int choice =3;
-        printf("Enter\n \
-        0-Admin\n\
-        1-user\n\
-        2-Exit\n\
-        ");
-        scanf("%d",&choice);
-        switch (choice)
-        {
-        case 0:
-            Admin();
-            break;
-        
-        default:
-            break;
-        }
-    }
+    ChooseControl();
 }

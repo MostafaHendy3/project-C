@@ -16,9 +16,11 @@ void editAdminPassword();
 
 //2 salma
 void removeStudentRecord(int id);
-void editStudentPassword();
-void editStudentName();
+void editStudentPassword(int i);
+void editStudentName(int i);
+void checkmethod();
 
+int findPosition(int id);
 //3 me
 void viewStudentRecord(int id);
 void viewAllStudentRecord();
