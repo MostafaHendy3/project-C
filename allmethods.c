@@ -4,6 +4,7 @@
 #include "stdio.h"
 #include "allmethods.h"
 Student *allRecords[classSize];
+char* Adminpassword ="1234";
 static int numOfStudent = 0;
 void addStudentRecord(Student *st)
 {
@@ -65,15 +66,16 @@ void editStudentGrade()
     }
 }
 void editAdminPassword(){
-    char* pass;
-    printf("Enter Admin PassWord: ");
-    scanf(" %[^\n]%*c", pass);
-    if (pass == Adminpassword)
-    {
-        printf("Please enter new password : ");
-        Adminpassword=scanf(" %[^\n]%*c", pass);
-
-    }else{
+    char * pass=(char*) malloc(strlen(Adminpassword)+1);
+    printf("Enter Admin Passwords\n");
+    scanf(" %[^\n]s",pass);
+        
+    if (strcmp(pass,Adminpassword)==0)
+        {
+        printf("Please enter new password :\n");
+        scanf(" %[^\n]%s", Adminpassword);
+        }
+    else{
         printf("The password is false please try again!");
     }
 }
@@ -121,28 +123,6 @@ void viewStudentRecord(int id)
     }
 }
 
-
-Student * readStudent(){
-        Student * st;
-        st = (Student *)malloc(sizeof (Student));
-        printf("Enter Name\n");
-        scanf(" %[^\n]s", st->name);
-        printf("%s",st->name);
-        printf("Enter ID\n");
-        scanf("%d",&(st->id));
-        printf("Enter age\n");
-        scanf("%d",&(st->age));
-        printf("Enter Grade\n");
-        scanf("%d",&(st->Grade));
-        printf("Enter Gender\n");
-        scanf("%d",&(st->gender));
-        printf("Enter passwordn\n");
-        scanf(" %[^\n]%*c", st->name);
-        //printf("%p\n",st);
-
-        
-        return st;
-}
 void viewAllStudentRecord(){
     for (int i = 0; i <classSize ; ++i) {
         viewStudentRecord(allRecords[i]->id);
@@ -152,15 +132,10 @@ void viewAllStudentRecord(){
 void removeStudentRecord(int id){
    int found =0;
     for (int i = 0; i < classSize; ++i) {
-        if(allRecords[i]!=0|| allRecords[i]!=NULL){
+        if(allRecords[i]!=0 || allRecords[i]!=NULL){
             if(id == allRecords[i]->id){
-               allRecords[i]->name = NULL;
-               allRecords[i]->id = 0;
-               allRecords[i]->age = 0;
-               allRecords[i]->Grade = 0;
-               allRecords[i]->gender = 0;
-               allRecords[i]->password = NULL;
-            printf("All data has been cleared");
+                free(allRecords[i]);
+                allRecords[i]=NULL;
                 found =1;
             }
         }
@@ -169,18 +144,5 @@ void removeStudentRecord(int id){
         printf("Student not Found ,Enter Valid ID");
     }
 }
-
-void editStudentPassword(){
-            printf("Please, enter your new password: \n");
-            gets(allRecords[i]->password);
-            printf("The password has been updated");
-            }
-
-
-void editStudentname(){
-            printf("Please, enter your name: \n");
-            gets(allRecords[i]->name);
-            printf("Your name has been updated");
-            }
 
 

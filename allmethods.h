@@ -6,7 +6,9 @@
 #define UNTITLED11_ALLMETHODS_H
 #include "struct.h"
 #include "data.h"
-char* Adminpassword="1234";
+#include <stdlib.h>
+#include <string.h>
+
 //1 aya
 void addStudentRecord(Student *st);
 void editStudentGrade();

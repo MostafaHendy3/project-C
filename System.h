@@ -3,7 +3,7 @@
 
 #include "stdlib.h"
 #include "allmethods.h"
-#include "data.h"
+#include "string.h"
 void Admin();
 void User();
 void ChooseControl();
