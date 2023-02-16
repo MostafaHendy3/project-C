@@ -103,8 +103,9 @@ Student *readStudent()
     scanf("%d", &(st->Grade));
     printf("Enter Gender\n");
     scanf("%d", &(st->gender));
-    printf("Enter passwordn\n");
-    scanf(" %[^\n]s", st->password);
+    printf("Enter passwordn");
+    //scanf(" %[^\n]s", st->password);
+    gets(st->password);
     printf("password : %s", st->password);
     // printf(", ID : %d", st->id);
     // printf(", age : %d", st->age);
