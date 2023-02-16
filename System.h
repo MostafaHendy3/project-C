@@ -3,8 +3,8 @@
 
 #include "stdlib.h"
 #include "allmethods.h"
-#include "data.h"
+#include "string.h"
 void Admin();
-void User();
+void User(int id);
 void ChooseControl();
 #endif
