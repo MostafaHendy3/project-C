@@ -3,18 +3,6 @@ static int tries = 0;
 Adminpass *ad;
 void Admin()
 {
-
-    //    Student * st;
-    //    st = (Student *)malloc(sizeof (Student));
-    //    st->name ="my_name1";
-    //    st->id = 1000;
-    //    st->Grade =100;
-    //    st->age=21;
-    //    st->gender =1;
-    //    allRecords[0]=st;
-    //    free(st);
-    //    st  =NULL;
-    //    viewStudentRecord(1000);
     for (int i = 0; i < 3 && tries < 3; i++)
     {
         char *pass = (char *)malloc(strlen(ad->password) + 1);
@@ -40,7 +28,7 @@ void Admin()
                 case 1:
                 {
                     Student *std = readStudent();
-                    //viewStudentRecord(std->id);
+                    // viewStudentRecord(std->id);
                     break;
                 }
                 case 2:
@@ -125,7 +113,6 @@ void ChooseControl()
     while (1)
     {
         printf("\n 0 -Admin \n 1-User \n 2-Exit\n");
-
         scanf("%u", &choice);
         switch (choice)
         {
@@ -133,17 +120,12 @@ void ChooseControl()
             Admin();
             break;
         case 1:
-            printf("111");
             checkmethod();
             break;
         case 2:
-            break;
+            return;
         default:
             printf("Enter Valid Choice");
-        }
-        if (choice == 2)
-        {
-            break;
         }
     }
 }

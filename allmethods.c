@@ -109,11 +109,11 @@ Student *readStudent()
 {
     Student *st = (Student *)malloc(sizeof(Student));
     printf("Enter Name\n");
-    st->name = (char *)malloc(20*sizeof(char));
+    st->name = (char *)malloc(30*sizeof(char));
     // scanf(" %[^\n]s", st->name);
     // scanf("%c", (char *) stdin);
     fflush(stdin);
-    fgets(st->name, sizeof(st->name), stdin);
+    fgets(st->name, 30*sizeof(char), stdin);
     fflush(stdin);
     // printf("name : %s", st->name);
     printf("Enter ID\n");
@@ -147,7 +147,7 @@ void viewStudentRecord(int targetId)
         if ( allRecords[i] != 0 || allRecords[i] != NULL)
         {
             if(targetId == allRecords[i]->id ){
-                printf("%u\n",allRecords[i]);
+            printf("%u\n",allRecords[i]);
             printf("Name : %s", allRecords[i]->name);
             printf(", ID : %d", allRecords[i]->id);
             printf(", age : %d", allRecords[i]->age);
