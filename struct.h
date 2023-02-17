@@ -6,16 +6,18 @@
 #define Students
 #include "stdio.h"
 #define classSize 20
-typedef struct student{
-    char * name;
+typedef struct student
+{
+    char *name;
     int Grade;
     int id;
     int age;
-    char * password;
-    int gender;
-}Student;
-typedef struct admin{
     char *password;
-}Adminpass;
+    int gender;
+} Student;
+typedef struct admin
+{
+    char *password;
+} Adminpass;
 
 #endif

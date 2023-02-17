@@ -9,22 +9,22 @@
 #include <stdlib.h>
 #include <string.h>
 
-//1 aya
+// 1 aya
 void addStudentRecord(Student *st);
 void editStudentGrade();
 void editAdminPassword();
 
-//2 salma
+// 2 salma
 void removeStudentRecord(int id);
 void editStudentPassword(int i);
 void editStudentName(int i);
 void checkmethod();
 
 int findPosition(int id);
-//3 me
+// 3 me
 void viewStudentRecord(int id);
 void viewAllStudentRecord();
-Student * readStudent();
+Student *readStudent();
 void readStudent2(Student *st);
 
-#endif //UNTITLED11_ALLMETHODS_H
+#endif // UNTITLED11_ALLMETHODS_H
