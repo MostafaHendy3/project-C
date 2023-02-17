@@ -40,12 +40,12 @@ void Admin()
                 case 1:
                 {
                     Student *std = readStudent();
-                    viewStudentRecord(std->id);
+                    //viewStudentRecord(std->id);
                     break;
                 }
                 case 2:
                 {
-                    printf("Enter ID\n");
+                    printf("Enter ID to Remove\n");
                     int id = 0;
                     scanf("%d", &id);
                     removeStudentRecord(id);
@@ -53,19 +53,17 @@ void Admin()
                 }
                 case 3:
                 {
-                    printf("Enter ID\n");
+                    printf("Enter ID to View\n");
                     int id = 0;
                     scanf("%d", &id);
                     viewStudentRecord(id);
                     break;
                 }
                 case 4:
-                    viewStudentRecord(10);
-                    viewStudentRecord(11);
+                    viewAllStudentRecord();
                     break;
                 case 5:
                     editAdminPassword();
-                    // printf(ad->password);
                     break;
                 case 6:
                     editStudentGrade();
