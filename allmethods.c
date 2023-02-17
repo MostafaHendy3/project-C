@@ -131,11 +131,10 @@ Student *readStudent()
             1-female\n");
     scanf("%d", &(st->gender));
     fflush(stdin);
-    printf("Enter passwordn");
+    printf("Enter password: \n");
     // char *pass = (char *)malloc(strlen(ad->password) + 1);
     st->password = (char *)malloc(strlen(ad->password) + 1);
     scanf(" %s", st->password);
-    printf(", password : %s", st->password);
     addStudentRecord(st);
     return st;
 }
@@ -215,12 +214,12 @@ int findPosition(int id)
 void editStudentPassword(int i)
 {
     printf("Please, enter your new password: \n");
-    gets(allRecords[i]->password);
+    scanf(" %[^\n]s",allRecords[i]->password);
     printf("The password has been updated");
 }
 void editStudentName(int i)
 {
     printf("Please, enter your name: \n");
-    gets(allRecords[i]->name);
+    scanf(" %[^\n]s",allRecords[i]->name);
     printf("Your name has been updated");
 }
