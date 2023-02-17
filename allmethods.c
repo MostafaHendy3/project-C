@@ -37,7 +37,7 @@ void addStudentRecord(Student *st)
         {
             if (allRecords[i] == 0 || allRecords[i] == NULL)
             {
-                allRecords[i]=st;
+                allRecords[i] = st;
                 return;
             }
         }
@@ -109,11 +109,11 @@ Student *readStudent()
 {
     Student *st = (Student *)malloc(sizeof(Student));
     printf("Enter Name\n");
-    st->name = (char *)malloc(30*sizeof(char));
+    st->name = (char *)malloc(30 * sizeof(char));
     // scanf(" %[^\n]s", st->name);
     // scanf("%c", (char *) stdin);
     fflush(stdin);
-    fgets(st->name, 30*sizeof(char), stdin);
+    fgets(st->name, 30 * sizeof(char), stdin);
     fflush(stdin);
     // printf("name : %s", st->name);
     printf("Enter ID\n");
@@ -131,11 +131,10 @@ Student *readStudent()
             1-female\n");
     scanf("%d", &(st->gender));
     fflush(stdin);
-    printf("Enter passwordn");
+    printf("Enter password: \n");
     // char *pass = (char *)malloc(strlen(ad->password) + 1);
     st->password = (char *)malloc(strlen(ad->password) + 1);
     scanf(" %s", st->password);
-    printf(", password : %s", st->password);
     addStudentRecord(st);
     return st;
 }
@@ -144,19 +143,20 @@ void viewStudentRecord(int targetId)
     int found = 0;
     for (int i = 0; i < classSize; ++i)
     {
-        if ( allRecords[i] != 0 || allRecords[i] != NULL)
+        if (allRecords[i] != 0 || allRecords[i] != NULL)
         {
-            if(targetId == allRecords[i]->id ){
-            printf("%u\n",allRecords[i]);
-            printf("Name : %s", allRecords[i]->name);
-            printf(", ID : %d", allRecords[i]->id);
-            printf(", age : %d", allRecords[i]->age);
-            printf(", Grade : %d", allRecords[i]->Grade);
-            printf(", Gender : %s", allRecords[i]->gender == 0 ? "Male" : "Female");
-            printf(" , Password %s \n", allRecords[i]->password);
-            found = 1;
-            return;
-            }    
+            if (targetId == allRecords[i]->id)
+            {
+                printf("%u\n", allRecords[i]);
+                printf("Name : %s", allRecords[i]->name);
+                printf(", ID : %d", allRecords[i]->id);
+                printf(", age : %d", allRecords[i]->age);
+                printf(", Grade : %d", allRecords[i]->Grade);
+                printf(", Gender : %s", allRecords[i]->gender == 0 ? "Male" : "Female");
+                printf(" , Password %s \n", allRecords[i]->password);
+                found = 1;
+                return;
+            }
         }
         else
         {
@@ -215,12 +215,12 @@ int findPosition(int id)
 void editStudentPassword(int i)
 {
     printf("Please, enter your new password: \n");
-    gets(allRecords[i]->password);
+    scanf(" %[^\n]s", allRecords[i]->password);
     printf("The password has been updated");
 }
 void editStudentName(int i)
 {
     printf("Please, enter your name: \n");
-    gets(allRecords[i]->name);
+    scanf(" %[^\n]s", allRecords[i]->name);
     printf("Your name has been updated");
 }

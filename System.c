@@ -19,9 +19,10 @@ void Admin()
                     4. View all records\n\
                     5. Edit admin password\n\
                     6. Edit student grade\n\
-                    7. Exit\
+                    7. Exit\n\
                     ");
                 unsigned int choice = 3;
+                printf("Your Choice : ");
                 scanf("%d", &choice);
                 switch (choice)
                 {
@@ -82,13 +83,14 @@ void User(int id)
     printf("Welcome in user mode.\n");
 rechoose:
     printf("Please, Choose the number for a certain action.\n"
-           "1- View your record \n2- Edit your password \n3- Edit your name /n0- Exit");
+           "1- View your record \n2- Edit your password \n3- Edit your name \n0- Exit\n");
+    printf("Your Choice: ");
     scanf("%d", &useraction);
     int i = findPosition(id);
     switch (useraction)
     {
     case 0:
-        // exit();              // break
+        return; // break
     case 1:
         viewStudentRecord(id);
         break;
@@ -102,9 +104,9 @@ rechoose:
     default:
     {
         printf("Invalid mode number. \nPlease, Enter a valid number");
-        goto rechoose;
     }
     }
+    goto rechoose;
 }
 void ChooseControl()
 {
@@ -113,6 +115,7 @@ void ChooseControl()
     while (1)
     {
         printf("\n 0 -Admin \n 1-User \n 2-Exit\n");
+        printf("Your Choice: ");
         scanf("%u", &choice);
         switch (choice)
         {
@@ -125,7 +128,7 @@ void ChooseControl()
         case 2:
             return;
         default:
-            printf("Enter Valid Choice");
+            printf("Enter Valid Choice\n");
         }
     }
 }
@@ -145,7 +148,8 @@ void checkmethod()
             re_pass:
                 printf("Please enter your password: \t\n");
                 scanf(" %[^\n]%*c", pass);
-                if (strcmp(pass, allRecords[i]->password))
+
+                if (strcmp(pass, allRecords[i]->password) == 0)
                 {
                     User(id);
                 }
@@ -162,12 +166,14 @@ void checkmethod()
                         break; // break
                     }
                 }
+                return;
             }
-            else
-            {
-                printf("Invalid ID");
-                checkmethod();
-            }
+            // else
+            // {
+            //     printf("Invalid ID");
+            //     checkmethod();
+            // }
         }
     }
+    printf("Invalid ID!");
 }
