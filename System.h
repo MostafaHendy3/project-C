@@ -1,10 +1,11 @@
 #ifndef System
 #define System
-
+#include <ctype.h>
 #include "stdlib.h"
+#include "struct.h"
 #include "allmethods.h"
-#include "data.h"
+#include "string.h"
 void Admin();
-void User();
+void User(int id);
 void ChooseControl();
 #endif
