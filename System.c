@@ -3,18 +3,6 @@ static int tries = 0;
 Adminpass *ad;
 void Admin()
 {
-
-    //    Student * st;
-    //    st = (Student *)malloc(sizeof (Student));
-    //    st->name ="my_name1";
-    //    st->id = 1000;
-    //    st->Grade =100;
-    //    st->age=21;
-    //    st->gender =1;
-    //    allRecords[0]=st;
-    //    free(st);
-    //    st  =NULL;
-    //    viewStudentRecord(1000);
     for (int i = 0; i < 3 && tries < 3; i++)
     {
         char *pass = (char *)malloc(strlen(ad->password) + 1);
@@ -41,7 +29,7 @@ void Admin()
                 case 1:
                 {
                     Student *std = readStudent();
-                    //viewStudentRecord(std->id);
+                    // viewStudentRecord(std->id);
                     break;
                 }
                 case 2:
@@ -102,7 +90,7 @@ rechoose:
     switch (useraction)
     {
     case 0:
-        return;             // break
+        return; // break
     case 1:
         viewStudentRecord(id);
         break;
@@ -122,6 +110,8 @@ rechoose:
 }
 void ChooseControl()
 {
+    ad = (Adminpass *)malloc(sizeof(Adminpass));
+    ad->password = "1234";
     printf("WelCome To Student Record System:  \t\n");
     unsigned int choice = 3;
     while (1)
@@ -138,13 +128,9 @@ void ChooseControl()
             checkmethod();
             break;
         case 2:
-            break;
+            return;
         default:
             printf("Enter Valid Choice\n");
-        }
-        if (choice == 2)
-        {
-            break;
         }
     }
 }
@@ -164,8 +150,8 @@ void checkmethod()
             re_pass:
                 printf("Please enter your password: \t\n");
                 scanf(" %[^\n]%*c", pass);
-                
-                if (strcmp(pass, allRecords[i]->password)==0)
+
+                if (strcmp(pass, allRecords[i]->password) == 0)
                 {
                     User(id);
                 }
