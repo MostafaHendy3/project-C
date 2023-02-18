@@ -75,17 +75,17 @@ void editStudentGrade()
 }
 void editAdminPassword()
 {
-    printf("admin Password %s\n", ad->password);
     char *pass = (char *)malloc(strlen(ad->password) + 1);
     char *NewPass = (char *)malloc(strlen(ad->password) + 1);
-    printf("admin Password at struct %s\n", ad->password);
     printf("Enter Admin Passwords\n");
     scanf(" %[^\n]s", pass);
     printf("admin Password at struct %s\n", ad->password);
     printf("admin Password u entered %s\n", pass);
     // getchar();
+    //ad->password=NULL;
     if (strcmp(pass, ad->password) == 0)
     {
+        ad->password=NULL;
         printf("Please enter new password :\n");
         scanf(" %[^\n]s", NewPass);
         printf("admin Password %s\n", NewPass);
