@@ -1,6 +1,7 @@
 # Student Record System
 
-    This is a mini-project for a Student Record System developed using C. The system stores student records containing their name, total grade, unique id, age, gender, and password.
+    This is a mini-project for a Student Record System developed using C.
+    The system stores student records containing their name, total grade, unique id, age, gender, and password.
     
 ## Features
 The system offers two modes:
