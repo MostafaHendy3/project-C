@@ -1,24 +1,39 @@
-# project-C
-Student Record System
+# Student Record System
 
-● This is a mini-project “Student Record System Project using C”
-● Student record contains his name, total grade, unique id, age, gender, and password.
-● The system has two modes:
-        1. Admin mode
-        2. User mode
+    This is a mini-project for a Student Record System developed using C. The system stores student records containing their name, total grade, unique id, age, gender, and password.
+    
+## Features
+The system offers two modes:
 
-and the user has to choose the mode at the beginning.
-● If the user chooses admin mode, ask him for the password and he has these
-privileges:
-          1. Add student record
-          2. Remove student record
-          3. View student record
-          4. View all records
-          5. Edit admin password
-          6. Edit student grade
+1. Admin mode:
 
-● When the user chooses “student mode”, ask him for the id and the password, and he
-has these privileges:
-        1. View your record.
-        2. Edit your password.
-        3. Edit your name
+    This mode is only accessible by entering the correct password. Once authenticated, the user can perform the following operations:
+
+        Add student record
+        Remove student record
+        View student record
+        View all records
+        Edit admin password
+        Edit student grade
+
+2. User mode:
+
+    This mode requires the student to enter their unique id and password. Once authenticated, the student can perform the following operations:
+    
+        View their record
+        Edit their password
+   
+## Usage:
+
+    
+The program prompts the user to choose a mode at the beginning. Depending on the mode chosen, the user will be prompted to enter their credentials. The system will then display the appropriate menu options, which can be selected by entering the corresponding number.
+
+To compile and run the program, simply navigate to the directory where the source code is located and enter the following commands in the terminal:
+
+    gcc main.c allmethods.c System.c -o main
+    ./main  or  main.exe
+
+
+## Acknowledgements
+
+This project was inspired by the need to manage student records effectively. It was developed as a mini-project and may be improved upon for larger scale use cases.
