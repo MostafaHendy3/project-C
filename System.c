@@ -137,7 +137,7 @@ void ChooseControl()
 void checkmethod()
 {
     int id;
-    char *pass;
+    char *pass = (char *)malloc(strlen(ad->password) + 1);
     printf("Please enter your ID: \t\n");
     scanf("%d", &id);
     for (int i = 0; i < classSize; ++i)
@@ -149,7 +149,7 @@ void checkmethod()
                 int count = 0;
             re_pass:
                 printf("Please enter your password: \t\n");
-                scanf(" %[^\n]%*c", pass);
+                scanf(" %[^\n]c", pass);
 
                 if (strcmp(pass, allRecords[i]->password) == 0)
                 {
