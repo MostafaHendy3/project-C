@@ -108,8 +108,12 @@ Student *readStudent()
     scanf("%d", &(st->id));
     printf("Enter age\n");
     scanf("%d", &(st->age));
-    printf("Enter Grade\n");
+    readGrade:
+    printf("Enter Grade range between [0,100]\n");
     scanf("%d", &(st->Grade));
+    if(st->Grade >100 || st->Grade <0){
+        goto readGrade;
+    }
     printf("\
             Enter Gender\n\
             0-male\n\
