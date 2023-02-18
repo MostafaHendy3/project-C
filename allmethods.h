@@ -8,6 +8,8 @@
 #include "data.h"
 #include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
+#define passwordsize 6
 
 // 1 aya
 void addStudentRecord(Student *st);

@@ -110,6 +110,8 @@ rechoose:
 }
 void ChooseControl()
 {
+    ad = (Adminpass *)malloc(sizeof(Adminpass));
+    ad->password = "1234";
     printf("WelCome To Student Record System:  \t\n");
     unsigned int choice = 3;
     while (1)

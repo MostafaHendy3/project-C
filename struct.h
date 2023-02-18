@@ -15,7 +15,7 @@ typedef struct student
     char *password;
     int gender;
 } Student;
-typedef struct admin
+typedef union admin
 {
     char *password;
 } Adminpass;
